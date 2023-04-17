@@ -20,5 +20,5 @@ from Aplicaciones.Gestion.views import formularioContacto, contactar
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('formularioContacto/', formularioContacto),
-    path('contactar/', contactar)
+    path('contactar/'         , contactar)
 ]

@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class GestionConfig(AppConfig):
-    name = 'Gestion'
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'Aplicaciones.Gestion'

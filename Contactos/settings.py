@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'Contactos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'contactos',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # pip install psycopg
+        'NAME': 'sistemasuni_contactos',
         'USER': 'postgres',
-        'PASSWORD': 'S3rv3r',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'DATABASE_PORT': '5432'
     }
@@ -124,9 +124,11 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+# Mail
+# https://docs.djangoproject.com/en/3.0/topics/email/
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_POST = 587
-EMAIL_HOST_USER = "correo@gmail.com"
-EMAIL_HOST_PASSWORD = "******"
+EMAIL_HOST_USER = "jorge.cywdt@gmail.com"
+EMAIL_HOST_PASSWORD = "rzsicyksafosdeel"

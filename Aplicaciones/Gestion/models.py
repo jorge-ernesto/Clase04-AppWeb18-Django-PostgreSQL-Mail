@@ -2,14 +2,18 @@ from django.db import models
 
 # Create your models here.
 
-class Ciudad(models.Model):
+class Ciudad(models.Model):  # Modelo creado para ejecutar migraciones
+    # Definir los datos de la clase (campos de la tabla)
+    # Si no se especifica lo contrario, todos los campos seran requeridos por defecto, es decir NOT NULL
     codigo = models.PositiveSmallIntegerField(primary_key=True)
     nombre = models.CharField(max_length=30)
 
     def __str__(self):
         return "{0}".format(self.nombre)
 
-class Persona(models.Model):
+class Persona(models.Model):  # Modelo creado para ejecutar migraciones
+    # Definir los datos de la clase (campos de la tabla)
+    # Si no se especifica lo contrario, todos los campos seran requeridos por defecto, es decir NOT NULL
     dni = models.CharField(max_length=8, primary_key=True)
     apellidoPaterno = models.CharField(max_length=35)
     apellidoMaterno = models.CharField(max_length=35)
@@ -29,14 +33,18 @@ class Persona(models.Model):
     def __str__(self):
         return self.nombreCompleto()
 
-class Telefono(models.Model):
+class Telefono(models.Model):  # Modelo creado para ejecutar migraciones
+    # Definir los datos de la clase (campos de la tabla)
+    # Si no se especifica lo contrario, todos los campos seran requeridos por defecto, es decir NOT NULL
     persona = models.ForeignKey(Persona, null=False, blank=False, on_delete=models.CASCADE)
     numero = models.CharField(max_length=9)
 
     def __str__(self):
         return "{0} ({1})".format(self.numero, self.persona)
 
-class Email(models.Model):
+class Email(models.Model):  # Modelo creado para ejecutar migraciones
+    # Definir los datos de la clase (campos de la tabla)
+    # Si no se especifica lo contrario, todos los campos seran requeridos por defecto, es decir NOT NULL
     persona = models.ForeignKey(Persona, null=False, blank=False, on_delete=models.CASCADE)
     email = models.CharField(max_length=100)
 
